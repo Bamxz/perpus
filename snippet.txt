@@ -1,0 +1,131 @@
+{
+  "PHP Tag": {
+    "prefix": "php",
+    "body": "<?php $1 ?>"
+  },
+
+  "Inline Echo": {
+    "prefix": "phpp",
+    "body": "<? $$1 ?>"
+  },
+
+  "Input Label": {
+    "prefix": "labelin",
+    "body": [
+      // "<label for=\"${2:username}\">${3:Username}</label>",
+      // "<input type=\"${1:text}\" name\"${2:username}\" id=\"${2:username}\">"
+      "<label>",
+      "\t${3:Username}",
+      "\t<input type=\"${1:text}\" name\"${2:username}\" placeholder=\"$4\">",
+      "</label>"
+    ]
+  },
+
+  "Table border": {
+    "prefix": "tablebor",
+    "body": [
+      "<table border=\"1\" cellpadding=\"5\" cellspacing=\"0\">",
+      // "\t<tr>",
+      // "\t    <th>$1</th>",
+      // "\t</tr>",
+      // "\t<tr>",
+      // "\t    <td>$2</td>",
+      // "\t</tr>",
+      "\t$1",
+      "</table>"
+    ]
+  },
+  "public functio": {
+    "prefix": "pubf",
+    "body": "public function $1($2)"
+  },
+
+  "connect": {
+    "prefix": "con1",
+    "body": [
+      "$$hostname = \"localhost\";",
+      "\t$$username = \"root\";",
+      "\t$$password = \"\";",
+      "\t$$database = \"$1\";",
+
+      "\t$$koneksi = mysqli_connect($$hostname, $$username, $$password, $$database);",
+
+      "\tif ($$koneksi->connect_error) {",
+      "\tdie(mysqli_connect_error());",
+      "\t}"
+    ]
+  },
+
+  "Database Class": {
+    "prefix": "con2",
+    "body": [
+      "class Database",
+      "\t{",
+      "\tprivate $$hostname = \"localhost\";",
+      "\tprivate $$username = \"root\";",
+      "\tprivate $$password = \"\";",
+      "\tprivate $$database = \"$1\";",
+      "\tprotected $$db;",
+      "public function __construct()",
+      "\t{",
+      "\t$$this->db =  mysqli_connect($$this->hostname, $$this->username, $$this->password, $$this->database);",
+      "\t}",
+      "\t}"
+    ]
+  },
+
+  "This in CodeIgniter": {
+    "prefix": "this",
+    "body": "\\$this->$db->$query($$sql)->$1;"
+  },
+
+  "variable fill": {
+    "prefix": "var",
+    "body": "$$1 = \"$2\";"
+  },
+
+  "variable properties": {
+    "prefix": "proper",
+    "body": "$$1 = $$2[\"$3\"];"
+  },
+
+  "array": {
+    "prefix": "array",
+    "body": "\"$1\" => $$_$2['$3'],"
+  },
+
+  "include_once": {
+    "prefix": "inc",
+    "body": "include_once(\"$1\");"
+  },
+
+  "REQUIRE_ONCE": {
+    "prefix": "req",
+    "body": "require_once(\"$1\");"
+  },
+
+  "variable 2": {
+    "prefix": "var2",
+    "body": "$$1 = $$2[\"$3\"];"
+  },
+
+  "COONNECT PRIVATE": {
+    "body": "dwadaw",
+    "prefix": ""
+  },
+
+  "connect private": {
+    "prefix": "con",
+    "body": "private $$1 = \"$2\";"
+  },
+
+  "header location": {
+    "prefix": "headloc",
+    "body": "header(\"Location: $1\")"
+  },
+
+  "SQL": {
+    "prefix": "sql",
+    "body": "$$sql = \"$1\""
+  }
+}
